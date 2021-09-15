@@ -1,0 +1,26 @@
+// $accent: #243f4d;
+// $link: #436372;
+$default:#0F0F0F;
+
+%mont-400{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+%mont-500{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+%mont-700{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+
+
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
