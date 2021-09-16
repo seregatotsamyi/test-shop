@@ -1,0 +1,15 @@
+@media (max-width: 1024px){
+  .shop__inner{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 800px){
+  .shop__inner{
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+@media (max-width: 428px){
+  .shop__inner{
+    grid-template-columns: 1fr ;
+  }
+}

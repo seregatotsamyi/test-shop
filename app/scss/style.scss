@@ -3,6 +3,179 @@
 @import 'reset';
 @import 'libs';
 @import 'global';
+@import 'animation';
+.shop{
+  padding: 100px 0;
+  &__title{
+    margin-bottom: 40px;
+  }
+  &__inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 50px 20px;
+  }
+  &__item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &__img--heart{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22px;
+    height: 18px;
+    cursor: pointer;
+    & path{
+      transition: all .3s;
+    }
+  }
+  &__img--wrap{
+    display: flex;
+    margin-bottom: 40px;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
+  }
+  &__img{
+    max-height: 200px;
+    object-fit: cover;
+  }
+  &__item__discr{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+  }
+  &__item__discr__top{
+    margin-bottom: 20px;
+  }
+  &__item__price--wrap{
+    display: flex;
+    align-items: flex-end;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: $price;
+    margin-bottom: 8px;
+    &.old-active{
+      .shop__item__price{
+        color: $price-hover;
+        margin-right: 9px;
+      }
+      .shop__item__price--old{
+        position: relative;
+        font-size: 16px;
+        line-height: 20px;
+        color: $price-old;
+        &::after{
+          position: absolute;
+          content: "";
+          height: 1px;
+          width: 100%;
+          top: 38%;
+          right: 0;
+          background-color: $price-hover;
+          transform: rotate(-12deg);
+        }
+      }
+    }
+  }
+  &__item__text{
+    color: $text;
+    display: block;
+    transition: all .3s;
+    &:hover{
+      color: $text-hover;
+    }
+  }
+  &__item__discr__bottom{
+    width: 100%;
+  }
+  &__item__btn--wrap{
+    display: flex;
+    justify-content: center;
+    transition: all .3s;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    width: auto;
+    height: auto;
+  }
 
+}
+.shop__item__discr__bottom.active-count{
+  .counter{
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    width: auto;
+    height: auto;
+  }
+  .shop__item__btn--wrap{
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+.counter{
+  transition: all .3s;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__btn{
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+    transition: all .3s;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+      background-color: #f2f2f2;
+      & svg path{
+        fill: #173DC2;
+      }
+    }
+    &:active{
+      background-color: #EDEDED;
+      & svg path{
+        fill: #1435A8;
+      }
+    }
+  }
+  &__input--wrap{
+    font-size: 16px;
+    line-height: 20px;
+    color: $text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 17px;
+  }
+  &__input{
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    background-color: transparent;
+    margin-right: 4px;
+    max-width: 20px;
+  }
+}
 
 @import 'media';

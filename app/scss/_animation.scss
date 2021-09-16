@@ -1,0 +1,7 @@
+.shop__item.red{
+  .shop__img--heart{
+    & path {
+      stroke: $price-hover;
+    } 
+  }
+}
